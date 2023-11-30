@@ -22,7 +22,7 @@ sendButton.addEventListener('click',
 
     // creiamo variabile del tempo
 
-    let time = 2;
+    let time = 30;
 
     let clock = setInterval(
         function (){
