@@ -37,21 +37,17 @@ sendButton.addEventListener('click',
 
                     risultato = parseInt(prompt('Digita i 5 numeri'));
 
-                    userTentativo.push(risultato);
+                    if(numbers.includes(risultato)){
+
+                        userTentativo.push(risultato);
+
+                    }
 
                 }  
 
                 console.log(userTentativo);
 
-                if(!userTentativo === numbers){
-
-
-                    alert('Hai perso');
-                    
-                } else{
-            
-                    alert ('Hai vinto!');
-                }
+                alert('Hai indovinato ' + (userTentativo.length) + " numeri che sono " + userTentativo);
         
             } else{
 
