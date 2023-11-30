@@ -18,24 +18,33 @@ sendButton.addEventListener('click',
   function(){
 // creare un arrey con 5 numeri casuali
 
-    let numbers = arreyBombe(1, 100, 5);
+    let numbers = arreyGenNum(1, 100, 5);
 
     // creiamo variabile del tempo
 
-    let time = 2
+    let time = 30;
 
     let clock = setInterval(
         function (){
+
+            // Quando il tempo ha raggiunto lo 0
 
             if(time === 0){
 
                 clearInterval(clock);
 
+                // numeri indovinati dall'utente
+
                 let userTentativo = [];
 
                 for(let i = 0; i < 5; i++){
 
-                    risultato = parseInt(prompt('Digita i 5 numeri'));
+                    // chiedo all'utente di inserire 5 numeri
+
+                    risultato = parseInt(prompt('Digita un numero'));
+
+
+                    // se il numero digitato è incluso nei numeri del gioco inseriscilo nel numeri indovinati dall'utente
 
                     if(numbers.includes(risultato)){
 
@@ -47,7 +56,21 @@ sendButton.addEventListener('click',
 
                 console.log(userTentativo);
 
-                alert('Hai indovinato ' + (userTentativo.length) + " numeri che sono " + userTentativo);
+                // se hai indovinato tutti e 5 i numeri
+
+                if(userTentativo.length = 5){
+
+                    arrNumber.innerHTML = 'Hai vinto!'
+
+                    // altrimenti
+
+                } else{
+
+                    arrNumber.innerHTML = 'Hai indovinato ' + (userTentativo.length) + " numeri " + userTentativo;
+
+                }
+
+                // altimenti continua a scorrere il tempo
         
             } else{
 
@@ -57,12 +80,9 @@ sendButton.addEventListener('click',
         
                 console.log(time); 
             }
-
-
         }, 
         1000
     );
-
 });
 
 
@@ -71,7 +91,7 @@ sendButton.addEventListener('click',
 
 // creiamo il nostro arrey di numeri casuali
 
-function arreyBombe(minNum, maxNum, lengthNum){
+function arreyGenNum(minNum, maxNum, lengthNum){
 
     // array da popolare
       const arrayToGen = [];
