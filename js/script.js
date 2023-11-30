@@ -22,7 +22,7 @@ sendButton.addEventListener('click',
 
     // creiamo variabile del tempo
 
-    let time = 30;
+    let time = 2;
 
     let clock = setInterval(
         function (){
@@ -58,9 +58,9 @@ sendButton.addEventListener('click',
 
                 // se hai indovinato tutti e 5 i numeri
 
-                if(userTentativo.length = 5){
+                if(userTentativo.length == 0){
 
-                    arrNumber.innerHTML = 'Hai vinto!'
+                    arrNumber.innerHTML = 'Non hai indovinato niente'
 
                     // altrimenti
 
